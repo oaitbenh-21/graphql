@@ -1,0 +1,234 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Profile</title>
+    <style>
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+            margin: 0;
+            gap: 2rem;
+
+            background-color: #f5f5f5;
+        }
+
+        body .container {
+            display: flex;
+            flex-direction: row;
+            gap: 2rem;
+        }
+
+        body .audit {
+            background-color: white;
+            display: flex;
+            flex-direction: column;
+            gap: 1.5rem;
+            padding: 2rem 0rem;
+            align-items: center;
+            justify-content: center;
+            border-radius: 10px;
+        }
+
+        body .audit .title {
+            width: 80%;
+        }
+
+        body .audit .ratio {
+            display: flex;
+            gap: 1rem;
+        }
+
+        body .audit .ratio .box-value {
+            border-radius: 0.8rem;
+            padding: 0.5rem;
+            width: 100px;
+            height: 100px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            gap: 0.5rem;
+        }
+
+        body .audit .ratio .box-value .icon {
+            width: 40px;
+        }
+
+        body .audit .ratio .up {
+            color: #16a34a;
+            background-color: #f0fdf4;
+        }
+
+        body .audit .ratio .down {
+            color: #dc2626;
+            background-color: #fef2f2;
+        }
+
+        body .audit .ratio .now {
+            color: #2563eb;
+            background-color: #eff6ff;
+        }
+
+        body .audit .progress-bar {
+            width: 70%;
+            background-color: #e5e7eb;
+            border-radius: 999px;
+        }
+
+        body .audit .progress-full {
+            width: 70%;
+            border-radius: 999px;
+            background-color: #16a34a;
+            text-align: center;
+            padding: 0.2rem;
+        }
+
+        body .audit .dialog {
+            width: 80%;
+            text-align: center;
+            font-size: 14px;
+            color: #4b5563;
+        }
+    </style>
+</head>
+
+<body>
+    <link rel="stylesheet" href="static/css/profile.css">
+    <div class="profile-card">
+        <div class="profile-header">
+            <div class="header-card">
+                <div class="avatar"> 100x100</div>
+            </div>
+            <div class="name">
+                <h2>Omar Ait Benhammou</h2>
+            </div>
+            <div class="role">Apprentice developer</div>
+            <div class="campus"><b>oujda</b></div>
+        </div>
+    </div>
+    <div class="container">
+        <div class="audit">
+            <div class="title">
+                <h2>User Audit Ratio</h2>
+            </div>
+            <div class="ratio">
+                <div class="box-value up">
+                    <svg class="icon" viewBox="0 0 24 24" fill="none" stroke="#16a34a" stroke-width="2"
+                        stroke-linecap="round" stroke-linejoin="round">
+                        <circle cx="12" cy="12" r="10" />
+                        <polyline points="16 12 12 8 8 12" />
+                        <line x1="12" y1="16" x2="12" y2="8" />
+                    </svg>
+                    70%
+                    up
+                </div>
+                <div class="box-value down">
+                    <svg class="icon" viewBox="0 0 24 24" fill="none" stroke="#dc2626" stroke-width="2"
+                        stroke-linecap="round" stroke-linejoin="round">
+                        <circle cx="12" cy="12" r="10" />
+                        <polyline points="8 12 12 16 16 12" />
+                        <line x1="12" y1="8" x2="12" y2="16" />
+                    </svg>
+                    30%
+                    down
+                </div>
+                <div class="box-value now">
+                    <svg class="icon" viewBox="0 0 24 24" fill="none" stroke="#2563eb" stroke-width="2"
+                        stroke-linecap="round" stroke-linejoin="round">
+                        <polyline points="22 12 18 12 15 21 9 3 6 12 2 12" />
+                    </svg>
+                    105MB
+                    total
+                </div>
+            </div>
+            <div class="progress-bar">
+                <div class="progress-full">70%</div>
+            </div>
+            <div class="dialog">
+                The current up/down ratio is 1.86, calculated from 65% up and 35% down ratings.
+            </div>
+        </div>
+        <div class="audit">
+            <svg width="400" height="300" viewBox="0 0 400 300">
+                <!-- Axes -->
+                <line x1="50" y1="250" x2="380" y2="250" stroke="#333" stroke-width="2" />
+                <line x1="50" y1="50" x2="50" y2="250" stroke="#333" stroke-width="2" />
+
+                <!-- X-axis labels -->
+                <text x="85" y="270" class="tick" text-anchor="middle">Jan</text>
+                <text x="135" y="270" class="tick" text-anchor="middle">Feb</text>
+                <text x="185" y="270" class="tick" text-anchor="middle">Mar</text>
+                <text x="235" y="270" class="tick" text-anchor="middle">Apr</text>
+                <text x="285" y="270" class="tick" text-anchor="middle">May</text>
+                <text x="335" y="270" class="tick" text-anchor="middle">Jun</text>
+
+                <!-- Y-axis labels -->
+                <text x="40" y="250" class="tick" text-anchor="end">0</text>
+                <text x="40" y="200" class="tick" text-anchor="end">25</text>
+                <text x="40" y="150" class="tick" text-anchor="end">50</text>
+                <text x="40" y="100" class="tick" text-anchor="end">75</text>
+                <text x="40" y="50" class="tick" text-anchor="end">100</text>
+                <!-- Axis titles -->
+                <rect class="bar" x="65" y="150" width="40" height="100" fill="#4299e1" />
+                <rect class="bar" x="115" y="100" width="40" height="150" fill="#4299e1" />
+                <rect class="bar" x="165" y="180" width="40" height="70" fill="#4299e1" />
+                <rect class="bar" x="215" y="80" width="40" height="170" fill="#4299e1" />
+                <rect class="bar" x="265" y="120" width="40" height="130" fill="#4299e1" />
+                <rect class="bar" x="315" y="190" width="40" height="60" fill="#4299e1" />
+            </svg>
+        </div>
+        <div class="audit">
+            <svg width="400" height="300" viewBox="0 0 400 300">
+                <!-- Axes -->
+                <line x1="50" y1="250" x2="380" y2="250" stroke="#333" stroke-width="2" />
+                <line x1="50" y1="50" x2="50" y2="250" stroke="#333" stroke-width="2" />
+
+                <!-- Grid lines -->
+                <line x1="50" y1="200" x2="380" y2="200" stroke="#ddd" stroke-width="1" stroke-dasharray="5,5" />
+                <line x1="50" y1="150" x2="380" y2="150" stroke="#ddd" stroke-width="1" stroke-dasharray="5,5" />
+                <line x1="50" y1="100" x2="380" y2="100" stroke="#ddd" stroke-width="1" stroke-dasharray="5,5" />
+                <line x1="50" y1="50" x2="380" y2="50" stroke="#ddd" stroke-width="1" stroke-dasharray="5,5" />
+
+                <!-- X-axis labels -->
+                <text x="75" y="270" class="tick" text-anchor="middle">Jan</text>
+                <text x="130" y="270" class="tick" text-anchor="middle">Feb</text>
+                <text x="185" y="270" class="tick" text-anchor="middle">Mar</text>
+                <text x="240" y="270" class="tick" text-anchor="middle">Apr</text>
+                <text x="295" y="270" class="tick" text-anchor="middle">May</text>
+                <text x="350" y="270" class="tick" text-anchor="middle">Jun</text>
+
+                <!-- Y-axis labels -->
+                <text x="40" y="250" class="tick" text-anchor="end">0</text>
+                <text x="40" y="200" class="tick" text-anchor="end">1K</text>
+                <text x="40" y="150" class="tick" text-anchor="end">2K</text>
+                <text x="40" y="100" class="tick" text-anchor="end">3K</text>
+                <text x="40" y="50" class="tick" text-anchor="end">4K</text>
+
+                <!-- Line -->
+                <path class="line" d="M75,180 L130,120 L185,160 L240,90 L295,110 L350,70" stroke="#10b981"
+                    fill="none" />
+
+                <!-- Data points -->
+                <circle class="data-point" cx="75" cy="180" r="5" fill="white" stroke="#10b981" />
+                <circle class="data-point" cx="130" cy="120" r="5" fill="white" stroke="#10b981" />
+                <circle class="data-point" cx="185" cy="160" r="5" fill="white" stroke="#10b981" />
+                <circle class="data-point" cx="240" cy="90" r="5" fill="white" stroke="#10b981" />
+                <circle class="data-point" cx="295" cy="110" r="5" fill="white" stroke="#10b981" />
+                <circle class="data-point" cx="350" cy="70" r="5" fill="white" stroke="#10b981" />
+
+                <!-- Axis titles -->
+                <text x="215" y="295" class="axis-label" text-anchor="middle">Month</text>
+                <text x="15" y="150" class="axis-label" text-anchor="middle"
+                    transform="rotate(-90, 15, 150)">Visitors</text>
+            </svg>
+        </div>
+    </div>
+</body>
+
+</html>

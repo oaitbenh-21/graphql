@@ -1,81 +1,45 @@
 export const queries = {
-    user: {
-        query: `{
-        user {
-          login
-          firstName
-          lastName
-          attrs
-          auditRatio
-          campus
-          createdAt
-          totalDown
-          totalUp
-          updatedAt
-        }
-      }`,
-    },
-
-    level: {
-        query: `{
-        transaction_aggregate(
-          where: {
-            type: { _eq: "level" }
-            event: { object: { name: { _eq: "Module" } } }
-          }
-          order_by: { createdAt: desc }
-        ) {
-          aggregate {
-            max {
-              amount
+  user: `{
+            user {
+              login
+              firstName
+              lastName
+              auditRatio
+              campus
+              totalDown
+              totalUp
             }
-          }
-        }
-      }`,
-    },
+          }`,
 
-    skills: {
-        query: `{
-        transaction(
-          where: { type: { _like: "skill%" } }
-          order_by: { amount: desc }
-        ) {
-          type
-          amount
-        }
-      }`,
-    },
-
-    projects: {
-        query: (moduleID) => `{
-        transaction(
-          where: {
-            type: { _eq: "xp" }
-            eventId: { _eq: ${moduleID} }
-          }
-          order_by: { createdAt: desc }
-        ) {
-          path
-          amount
-          createdAt
-        }
-      }`,
-    },
-
-    audit: {
-        query: `{
-        user {
-          audits_aggregate(where: { closureType: { _eq: succeeded } }) {
-            aggregate {
-              count
+  level: `{
+            transaction_aggregate(
+              where: {type: {_eq: "level"}, event: {object: {name: {_eq: "Module"}}}}
+              order_by: {createdAt: desc}
+            ) {
+              aggregate {
+                max {
+                  amount
+                }
+              }
             }
-          }
-          failed_audits: audits_aggregate(where: { closureType: { _eq: failed } }) {
-            aggregate {
-              count
-            }
-          }
-        }
-      }`,
-    },
+          }`,
+
+  skills: `{
+              transaction(where: {type: {_like: "skill_%"}}, order_by: {amount: desc}) {
+                type
+                amount
+              }
+            }`,
+
+  projects: `{
+                transaction(
+                  where: {type: {_eq: "xp"}, eventId: {_eq: 41}}
+                  order_by: {createdAt: desc}
+                ) {
+                  path
+                  amount
+                  createdAt
+                }
+              }`,
+
 };

@@ -1,7 +1,7 @@
 export function projectsXpChart(data, title, options = {}) {
     const defaultOptions = {
-      width: 500,
-      height: 500,
+      width: 550,
+      height: 550,
       left: 180,
       right: 120,
       top: 30,

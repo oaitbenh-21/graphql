@@ -61,7 +61,7 @@
             outline: none;
         }
 
-        .login-btn {
+        #login-btn {
             width: 100%;
             padding: 10px;
             background-color: #4a90e2;
@@ -72,7 +72,7 @@
             cursor: pointer;
         }
 
-        .login-btn:hover {
+        #login-btn:hover {
             background-color: #357ab7;
         }
 
@@ -99,36 +99,25 @@
 </head>
 
 <body>
+    <script>
+        if (localStorage.getItem("hasura-jwt-token")) {
+            location.href = "/popup.html"
+        }
+    </script>
     <div class="login-container">
         <h2>Login</h2>
-        <form id="loginForm">
-            <div class="input-group">
-                <label for="username">Username</label>
-                <input type="text" id="username" name="username" required>
-            </div>
-            <div class="input-group">
-                <label for="password">Password</label>
-                <input type="password" id="password" name="password" required>
-            </div>
-            <div id="error-message" class="error-message"></div>
-            <button type="submit" class="login-btn">Login</button>
-        </form>
+        <div class="input-group">
+            <label for="username">Username</label>
+            <input type="text" id="username" name="username" required>
+        </div>
+        <div class="input-group">
+            <label for="password">Password</label>
+            <input type="password" id="password" name="password" required>
+        </div>
+        <div id="error-message" class="error-message"></div>
+        <button type="submit" id="login-btn">Login</button>
     </div>
-
-    <script>
-        document.getElementById('loginForm').addEventListener('submit', function (e) {
-            e.preventDefault();
-            const username = document.getElementById('username').value;
-            const password = document.getElementById('password').value;
-            if (!username || !password) {
-                document.getElementById('error-message').textContent = 'Please enter both username and password.';
-            } else {
-                document.getElementById('error-message').textContent = '';
-                document.getElementById('loginForm').reset();
-            }
-        });
-
-    </script>
+    <script type="module" src="./static/js/utils/login.js"></script>
 </body>
 
 </html>

@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+            margin: 0;
+            background-color: #f5f5f5;
+        }
+
+        .popup {
+            background-color: white;
+            text-align: center;
+            border-radius: 20px;
+            padding: 40px;
+        }
+
+        .popup * {
+            margin: 20px;
+        }
+
+        .popup button {
+            width: 100px;
+            height: 30px;
+            background-color: #4a90e2;
+            color: white;
+            border: none;
+            border-radius: 4px;
+            font-size: 16px;
+            cursor: pointer;
+        }
+
+        p {
+            font-size: 20px;
+        }
+
+        button:hover {
+            background-color: #357ab7;
+        }
+    </style>
+</head>
+
+<body>
+    <script>
+        if (!localStorage.getItem("hasura-jwt-token")) {
+            location.href = "/login.html"
+        }
+    </script>
+    <div class="popup">
+        <p>You Already Have JWT token You Wanna Logout ?</p>
+        <button onclick="location.href = '/logout.html'">yes</button>
+        <button onclick="location.href = '/'">no</button>
+    </div>
+</body>
+
+</html>

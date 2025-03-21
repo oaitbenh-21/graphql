@@ -1,5 +1,5 @@
 export function createProjectGraph(data, title, options = {}, radius) {
-    const containerId = options.containerId || 'container';
+    // const containerId = options.containerId || 'container';
     const width = options.width || 400;
     const height = options.height || 400;
     const levels = options.levels || 5;

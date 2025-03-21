@@ -27,7 +27,7 @@ getData().then((data) => {
   document.querySelector(".ratio .up p").innerText = (data.user.totalUp / 1000 / 1000).toFixed(2) + " mb";
   document.querySelector(".ratio .down p").innerText = (data.user.totalDown / 1000 / 1000).toFixed(2) + " mb";
   document.querySelector(".ratio .now p").innerText = (data.user.totalUp / data.user.totalDown).toFixed(1) + " total";
-  document.querySelector(".progress-bar .progress-full").innerText = (data.user.totalUp / data.user.totalDown).toFixed(1) * 100 + "%";
+  document.querySelector(".progress-bar .progress-full").innerText = ((data.user.totalUp / data.user.totalDown).toFixed(1) * 100).toFixed() + "%";
   let progress = data.user.totalUp / data.user.totalDown * 100;
   if (progress > 100) {
     progress = 100
